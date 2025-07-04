@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Code, Layers, Cloud } from "lucide-react";
 import project1 from "./assets/project1.png";
-import project2 from "./assets/project2.png"
+import project2 from "./assets/project2.png";
+import project3 from "./assets/project2.png";
+import RF from "./assets/RF.png";
+
 export default function App() {
   const projects = [
-    { title: "Middleton Method", image: project1, description: "Middleton Method" },
-    { title: "Royal Legacy Financial Advisors", image: project2, description: "Royal Legacy Financial Advisors" },
-    { title: "Project Three", image: "https://via.placeholder.com/600x400", description: "Description of Project Three." },
+    { title: "Project One", image: project1, description: "Description of Project One." },
+    { title: "Project Two", image: project2, description: "Description of Project Two." },
+    { title: "Project Three", image: project3, description: "Description of Project Three." },
   ];
 
   const journeySteps = [
@@ -41,7 +44,10 @@ export default function App() {
     <main className="bg-white text-black font-sans scroll-smooth">
       {/* Sticky Header */}
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 flex justify-between items-center px-6 py-4">
-        <h1 className="text-xl font-semibold font-poppins">Darnel Jones Jr</h1>
+        <div className="flex items-center gap-2">
+          <img src={RF} alt="Render Forge Logo" className="h-10 w-auto" />
+          <h1 className="text-xl font-semibold font-poppins">Darnel Jones Jr</h1>
+        </div>
         <nav className="space-x-4">
           <a href="#about" className="hover:underline">About</a>
           <a href="#projects" className="hover:underline">Work</a>
@@ -53,7 +59,7 @@ export default function App() {
       {/* Hero Section */}
       <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-gradient-to-br from-yellow-100 via-white to-blue-100">
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-semibold font-poppins mb-4">Darnel Jones Jr</motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-xl md:text-2xl mb-6">Software Engineer & Technical Consultant</motion.p>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-xl md:text-2xl mb-6">Creative Developer & Designer</motion.p>
         <a href="#projects" className="bg-black text-white px-6 py-3 rounded-full inline-block">View My Work</a>
       </section>
 
@@ -107,7 +113,7 @@ export default function App() {
       <section id="contact" className="py-20 px-4 text-center bg-gradient-to-t from-gray-100 via-white to-gray-100">
         <h2 className="text-3xl md:text-4xl font-semibold mb-6">Let's Connect</h2>
         <p className="text-lg md:text-xl text-gray-600 mb-6">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
-        <a href="mailto:hayes.stokes.tech@gmail.com" className="bg-black text-white px-6 py-3 rounded-full inline-block hover:bg-gray-800 transition">Hire Me</a>
+        <a href="https://calendly.com/hayes-stokes-tech/30min" className="bg-black text-white px-6 py-3 rounded-full inline-block hover:bg-gray-800 transition">Say Hello</a>
       </section>
 
       {/* Footer */}
