@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Code, Layers, Cloud } from "lucide-react";
 
 export default function App() {
-  const [selectedProject, setSelectedProject] = useState(null);
   const projects = [
     { title: "Project One", image: "https://via.placeholder.com/600x400", description: "Description of Project One." },
     { title: "Project Two", image: "https://via.placeholder.com/600x400", description: "Description of Project Two." },
@@ -42,7 +40,7 @@ export default function App() {
     <main className="bg-white text-black font-sans scroll-smooth">
       {/* Sticky Header */}
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 flex justify-between items-center px-6 py-4">
-        <h1 className="text-xl font-bold">Darnel Jones</h1>
+        <h1 className="text-xl font-semibold font-poppins">Darnel Jones Jr</h1>
         <nav className="space-x-4">
           <a href="#about" className="hover:underline">About</a>
           <a href="#projects" className="hover:underline">Work</a>
@@ -53,7 +51,7 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-gradient-to-br from-yellow-100 via-white to-blue-100">
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-bold mb-4">Darnel Jones</motion.h1>
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-semibold font-poppins mb-4">Darnel Jones Jr</motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-xl md:text-2xl mb-6">Creative Developer & Designer</motion.p>
         <a href="#projects" className="bg-black text-white px-6 py-3 rounded-full inline-block">View My Work</a>
       </section>
@@ -70,7 +68,7 @@ export default function App() {
         <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">Selected Work</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <div key={index} onClick={() => setSelectedProject(project)} className="overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer bg-white rounded shadow">
+            <div key={index} className="overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer bg-white rounded shadow">
               <img src={project.image} alt={project.title} className="w-full h-60 object-cover" />
               <div className="p-4">
                 <h3 className="text-xl font-medium">{project.title}</h3>
@@ -113,7 +111,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-6 text-center text-gray-500">
-        &copy; {new Date().getFullYear()} Darnel Jones. All rights reserved.
+        &copy; {new Date().getFullYear()} Darnel Jones Jr. All rights reserved.
       </footer>
     </main>
   );
