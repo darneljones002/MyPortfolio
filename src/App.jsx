@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Briefcase, GraduationCap, Code, Layers, Cloud } from "lucide-react";
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -13,22 +14,27 @@ export default function App() {
     {
       title: "Education",
       description: "Bachelor of Science in Interdisciplinary Studies with a concentration in Computer Science from Liberty University.",
+      icon: <GraduationCap className="w-8 h-8 text-black mb-2" />,
     },
     {
       title: "NCR, Inc.",
       description: "Debug Technician troubleshooting POS malfunctions while studying Computer Science.",
+      icon: <Briefcase className="w-8 h-8 text-black mb-2" />,
     },
     {
       title: "Amobee, Inc.",
       description: "Started as UI/UX Engineering Intern, then UI/UX Engineer working on social media campaign platforms using AngularJS and Java.",
+      icon: <Layers className="w-8 h-8 text-black mb-2" />,
     },
     {
       title: "Bank of America",
       description: "ReactJS Developer and UI Application Architect building internal and customer-facing apps with modern libraries and best practices.",
+      icon: <Code className="w-8 h-8 text-black mb-2" />,
     },
     {
       title: "FINEOS Ltd",
       description: "Sr. Technical Consultant coding in Java, managing AWS deployments, creating custom features, and ensuring security protocols.",
+      icon: <Cloud className="w-8 h-8 text-black mb-2" />,
     },
   ];
 
@@ -46,14 +52,14 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+      <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-gradient-to-br from-yellow-100 via-white to-blue-100">
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-bold mb-4">Darnel Jones</motion.h1>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-xl md:text-2xl mb-6">Creative Developer & Designer</motion.p>
         <a href="#projects" className="bg-black text-white px-6 py-3 rounded-full inline-block">View My Work</a>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-4 max-w-3xl mx-auto text-center">
+      <section id="about" className="py-24 px-4 max-w-3xl mx-auto text-center bg-gradient-to-r from-gray-100 via-white to-gray-100">
         <h2 className="text-3xl md:text-4xl font-semibold mb-6">About Me</h2>
         <p className="text-lg md:text-xl text-gray-600 mb-8">I'm a creative developer passionate about crafting beautiful and functional digital experiences. With expertise in both design and development, I help brands and individuals bring their visions to life through thoughtful, impactful web experiences.</p>
         <a href="#hire" className="bg-black text-white px-8 py-3 rounded-full inline-block hover:bg-gray-800 transition">Hire</a>
@@ -74,31 +80,32 @@ export default function App() {
         </div>
       </section>
 
-      {/* Hire / My Journey Section with Timeline */}
-      <section id="hire" className="py-24 px-4 max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">My Journey</h2>
-        <div className="relative border-l-4 border-black">
+      {/* Hire / My Journey Section with icons */}
+      <section id="hire" className="py-24 px-4 max-w-4xl mx-auto relative bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2),transparent)] mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
+        <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center relative z-10">My Journey</h2>
+        <div className="relative border-l-4 border-black relative z-10">
           {journeySteps.map((step, index) => (
             <motion.div 
               key={index} 
               initial={{ opacity: 0, x: -50 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               transition={{ duration: 0.6, delay: index * 0.2 }} 
-              className="mb-12 ml-6"
+              className="mb-12 ml-6 flex items-start gap-4"
             >
-              <div className="absolute w-4 h-4 bg-black rounded-full -left-2 top-1"></div>
-              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-gray-700 text-lg">{step.description}</p>
+              <div className="flex-shrink-0">{step.icon}</div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-gray-700 text-lg">{step.description}</p>
+              </div>
             </motion.div>
           ))}
-        </div>
-        <div className="text-center">
-          <a href="#contact" className="mt-12 bg-black text-white px-8 py-3 rounded-full inline-block hover:bg-gray-800 transition">Get in Touch</a>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 text-center">
+      <section id="contact" className="py-20 px-4 text-center bg-gradient-to-t from-gray-100 via-white to-gray-100">
         <h2 className="text-3xl md:text-4xl font-semibold mb-6">Let's Connect</h2>
         <p className="text-lg md:text-xl text-gray-600 mb-6">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
         <a href="mailto:youremail@example.com" className="bg-black text-white px-6 py-3 rounded-full inline-block hover:bg-gray-800 transition">Say Hello</a>
