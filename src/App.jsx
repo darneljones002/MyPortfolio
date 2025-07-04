@@ -9,6 +9,29 @@ export default function App() {
     { title: "Project Three", image: "https://via.placeholder.com/600x400", description: "Description of Project Three." },
   ];
 
+  const journeySteps = [
+    {
+      title: "Education",
+      description: "Bachelor of Science in Interdisciplinary Studies with a concentration in Computer Science from Liberty University.",
+    },
+    {
+      title: "NCR, Inc.",
+      description: "Debug Technician troubleshooting POS malfunctions while studying Computer Science.",
+    },
+    {
+      title: "Amobee, Inc.",
+      description: "Started as UI/UX Engineering Intern, then UI/UX Engineer working on social media campaign platforms using AngularJS and Java.",
+    },
+    {
+      title: "Bank of America",
+      description: "ReactJS Developer and UI Application Architect building internal and customer-facing apps with modern libraries and best practices.",
+    },
+    {
+      title: "FINEOS Ltd",
+      description: "Sr. Technical Consultant coding in Java, managing AWS deployments, creating custom features, and ensuring security protocols.",
+    },
+  ];
+
   return (
     <main className="bg-white text-black font-sans scroll-smooth">
       {/* Sticky Header */}
@@ -17,6 +40,7 @@ export default function App() {
         <nav className="space-x-4">
           <a href="#about" className="hover:underline">About</a>
           <a href="#projects" className="hover:underline">Work</a>
+          <a href="#hire" className="hover:underline">Hire</a>
           <a href="#contact" className="hover:underline">Contact</a>
         </nav>
       </header>
@@ -32,7 +56,7 @@ export default function App() {
       <section id="about" className="py-24 px-4 max-w-3xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-semibold mb-6">About Me</h2>
         <p className="text-lg md:text-xl text-gray-600 mb-8">I'm a creative developer passionate about crafting beautiful and functional digital experiences. With expertise in both design and development, I help brands and individuals bring their visions to life through thoughtful, impactful web experiences.</p>
-        <a href="#contact" className="bg-black text-white px-8 py-3 rounded-full inline-block hover:bg-gray-800 transition">Hire</a>
+        <a href="#hire" className="bg-black text-white px-8 py-3 rounded-full inline-block hover:bg-gray-800 transition">Hire</a>
       </section>
 
       {/* Projects Section */}
@@ -50,17 +74,28 @@ export default function App() {
         </div>
       </section>
 
-      {/* Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-          <div className="bg-white max-w-lg w-full p-6 rounded-lg relative">
-            <button onClick={() => setSelectedProject(null)} className="absolute top-2 right-4 text-2xl">×</button>
-            <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-64 object-cover mb-4 rounded" />
-            <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
-            <p className="text-gray-700">{selectedProject.description}</p>
-          </div>
+      {/* Hire / My Journey Section with Timeline */}
+      <section id="hire" className="py-24 px-4 max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">My Journey</h2>
+        <div className="relative border-l-4 border-black">
+          {journeySteps.map((step, index) => (
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, x: -50 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.6, delay: index * 0.2 }} 
+              className="mb-12 ml-6"
+            >
+              <div className="absolute w-4 h-4 bg-black rounded-full -left-2 top-1"></div>
+              <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+              <p className="text-gray-700 text-lg">{step.description}</p>
+            </motion.div>
+          ))}
         </div>
-      )}
+        <div className="text-center">
+          <a href="#contact" className="mt-12 bg-black text-white px-8 py-3 rounded-full inline-block hover:bg-gray-800 transition">Get in Touch</a>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 text-center">
