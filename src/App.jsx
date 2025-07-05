@@ -46,7 +46,7 @@ export default function App() {
       <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 flex justify-between items-center px-6 py-4">
         <div className="flex items-center gap-2">
           <img src={RF} alt="Render Forge Logo" className="h-10 w-auto" />
-          <h1 className="text-xl font-semibold font-poppins">Darnel Jones Jr</h1>
+          <h1 className="text-xl font-semibold font-poppins">Render Forge</h1>
         </div>
         <nav className="space-x-4">
           <a href="#about" className="hover:underline">About</a>
@@ -58,8 +58,8 @@ export default function App() {
 
       {/* Hero Section */}
       <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-gradient-to-br from-yellow-100 via-white to-blue-100">
-        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-semibold font-poppins mb-4">Darnel Jones Jr</motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-xl md:text-2xl mb-6">Creative Developer & Designer</motion.p>
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="text-5xl md:text-7xl font-semibold font-poppins mb-4">Render Forge</motion.h1>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} className="text-xl md:text-2xl mb-6">Create | Solve | Grow</motion.p>
         <a href="#projects" className="bg-black text-white px-6 py-3 rounded-full inline-block">View My Work</a>
       </section>
 
