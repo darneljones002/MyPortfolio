@@ -4,6 +4,7 @@ import project1 from "./assets/project1.png";
 import project2 from "./assets/project2.png";
 import project3 from "./assets/project2.png";
 import RF from "./assets/RF.png";
+import DriveGallery from "./components/DriveGallery";
 
 export default function App() {
   const projects = [
@@ -84,6 +85,7 @@ export default function App() {
           ))}
         </div>
       </section>
+      <DriveGallery/>
 
       {/* Hire / My Journey Section with icons */}
       <section id="hire" className="py-24 px-4 max-w-4xl mx-auto relative bg-gradient-to-br from-purple-100 via-pink-50 to-blue-100 overflow-hidden">
