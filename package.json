@@ -1,8 +1,10 @@
 {
-  "name": "royal-legacy",
+  "name": "my-portfolio-2025",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.859.0",
+    "@aws-sdk/s3-request-presigner": "^3.859.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
